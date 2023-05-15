@@ -7,3 +7,10 @@ activity-log:
 
 server:
   port: 8080
+
+threadPool:
+  corePoolSize: 10
+  maxPoolSize: 20
+  maxQueueSize: 200
+  namePrefix: sub-system-call-thread
+
