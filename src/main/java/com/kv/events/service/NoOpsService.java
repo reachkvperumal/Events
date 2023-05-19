@@ -14,8 +14,9 @@ public class NoOpsService {
     private ApplicationEventPublisher eventPublisher;
 
     public String apply(Person person) {
-        log.info("{} , {}", person.getFirstName(), person.getLastName());
+       log.info("{} , {}", person.getFirstName(), person.getLastName());
         eventPublisher.publishEvent(person);
-        return "SUCCESS!";
+        person.setStatus("CREATED");
+        return person;
     }
 }
