@@ -20,7 +20,7 @@ public class NoOpsService {
        log.info("{} , {}", person.getFirstName(), person.getLastName());
         eventPublisher.publishEvent(person);
         person.setStatus("CREATED");
-        return person;
+        return person.getFirstName();
     }
 
     @Cacheable(value = "infoDetails", cacheManager = "defaultCacheManager", key = "#root.methodName",
